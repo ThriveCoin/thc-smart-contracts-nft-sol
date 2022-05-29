@@ -1,7 +1,7 @@
 {
-  "name": "thc-smart-contracts-sol",
+  "name": "thc-smart-contracts-nft-sol",
   "version": "1.0.0",
-  "description": "ThriveCoin Smart Contracts",
+  "description": "ThriveCoin NFT Smart Contracts",
   "scripts": {
     "build": "truffle build",
     "clear": "rm -r build/contracts",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThriveCoin/thc-smart-contracts-sol.git"
+    "url": "git+https://github.com/ThriveCoin/thc-smart-contracts-nft-sol.git"
   },
   "keywords": [
     "thrivecoin",
@@ -35,9 +35,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ThriveCoin/thc-smart-contracts-sol/issues"
+    "url": "https://github.com/ThriveCoin/thc-smart-contracts-nft-sol/issues"
   },
-  "homepage": "https://github.com/ThriveCoin/thc-smart-contracts-sol#readme",
+  "homepage": "https://github.com/ThriveCoin/thc-smart-contracts-nft-sol#readme",
   "devDependencies": {
     "@truffle/hdwallet-provider": "^1.7.0",
     "ethers": "^5.5.1",

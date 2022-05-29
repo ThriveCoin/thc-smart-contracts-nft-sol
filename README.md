@@ -22,7 +22,7 @@ Run example:
 node client/index.js
 ```
 
-## Deployment and verificatioin
+## Deployment and verification
 
 **Note! Use commands below carefully as they interact with test networks**
 
@@ -33,8 +33,7 @@ npm run migrate -- --network goerli
 
 Verify on Goerli:
 ```
-npm run verify -- ThriveCoinERC20Token --network goerli
-npm run verify -- ThriveCoinVestingSchedule --network goerli
+npm run verify -- ThriveCoinERC721Token --network goerli
 ```
 
 Migrate on Mumbai:
@@ -44,8 +43,7 @@ npm run migrate -- --network mumbai
 
 Verify on Mumbai:
 ```
-npm run verify -- ThriveCoinERC20TokenPolygon --network mumbai
-npm run verify -- ThriveCoinVestingSchedule --network mumbai
+npm run verify -- ThriveCoinERC721Token --network mumbai
 ```
 
 ## Testing
