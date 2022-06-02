@@ -24,14 +24,6 @@ describe('ThriveCoinERC721Token', () => {
       await erc721.mint(accounts[3], 'ipfs://puma', { from: accounts[0] })
     })
 
-    it('token info params should be accessible', async () => {
-      const name = await erc721.name.call()
-      const symbol = await erc721.symbol.call()
-
-      assert.strictEqual(name, 'ThriveCoinNFT')
-      assert.strictEqual(symbol, 'THRIVENFT')
-    })
-
     it('balanceOf should return expected balances', async () => {
       const acc0Bal = await erc721.balanceOf.call(accounts[0])
       const acc1Bal = await erc721.balanceOf.call(accounts[1])
