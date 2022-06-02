@@ -1,6 +1,7 @@
 'use strict'
 
 const ThriveCoinERC721Token = artifacts.require('ThriveCoinERC721Token')
+const ERC721HolderTest = artifacts.require('ERC721HolderTest')
 
 module.exports = async function (deployer, network, accounts) {
   if (['development', 'test', 'private'].includes(network)) {
@@ -11,5 +12,9 @@ module.exports = async function (deployer, network, accounts) {
     }
 
     await deployer.deploy(ThriveCoinERC721Token, ...Object.values(config), { from: owner })
+  }
+
+  if (network === 'test') {
+    await deployer.deploy(ERC721HolderTest)
   }
 }

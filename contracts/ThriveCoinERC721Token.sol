@@ -49,6 +49,8 @@ contract ThriveCoinERC721Token is AccessControlEnumerable, ERC721Enumerable, ERC
     _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
     _setupRole(MINTER_ROLE, _msgSender());
     _setupRole(PAUSER_ROLE, _msgSender());
+
+    _tokenIdTracker.increment(); // start id from 1 and not 0
   }
 
   /**
