@@ -64,6 +64,14 @@ describe('ThriveCoinERC721Token', () => {
       assert.ok(error instanceof Error)
     })
 
+    it('approve should work when paused', async () => {
+      await erc721.approve(accounts[1], 1, { from: accounts[0] })
+    })
+
+    it('setApprovalForAll should work when paused', async () => {
+      await erc721.setApprovalForAll(accounts[1], true, { from: accounts[0] })
+    })
+
     it('grantRole should work when paused', async () => {
       await erc721.grantRole(MINTER_ROLE, accounts[1], { from: accounts[0] })
       await erc721.grantRole(MINTER_ROLE, accounts[2], { from: accounts[0] })
