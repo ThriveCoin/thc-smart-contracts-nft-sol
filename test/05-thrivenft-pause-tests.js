@@ -38,7 +38,7 @@ describe('ThriveCoinERC721Token', () => {
 
     it('safeTransferFrom should fail when paused', async () => {
       try {
-        await await erc721.safeTransferFrom(accounts[0], accounts[1], 1, { from: accounts[0] })
+        await erc721.safeTransferFrom(accounts[0], accounts[1], 1, { from: accounts[0] })
         throw new Error('Should not reach here')
       } catch (err) {
         assert.ok(err.message.includes('ERC721Pausable: token transfer while paused'))
@@ -47,7 +47,7 @@ describe('ThriveCoinERC721Token', () => {
 
     it('transferFrom should fail when paused', async () => {
       try {
-        await await erc721.transferFrom(accounts[0], accounts[1], 1, { from: accounts[0] })
+        await erc721.transferFrom(accounts[0], accounts[1], 1, { from: accounts[0] })
         throw new Error('Should not reach here')
       } catch (err) {
         assert.ok(err.message.includes('ERC721Pausable: token transfer while paused'))

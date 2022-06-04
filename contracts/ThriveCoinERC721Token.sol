@@ -95,7 +95,7 @@ contract ThriveCoinERC721Token is AccessControlEnumerable, ERC721Enumerable, ERC
    * @param _tokenURI - The Uniform Resource Identifier (URI) for `tokenId` token.
    */
   function mint(address to, string memory _tokenURI) public virtual {
-    require(hasRole(MINTER_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have minter role to mint");
+    require(hasRole(MINTER_ROLE, _msgSender()), "ThriveCoinERC721Token: must have minter role to mint");
 
     uint256 tokenId = _tokenIdTracker.current();
     _safeMint(to, tokenId);
@@ -120,7 +120,7 @@ contract ThriveCoinERC721Token is AccessControlEnumerable, ERC721Enumerable, ERC
    * - the caller must have the `PAUSER_ROLE`.
    */
   function pause() public virtual {
-    require(hasRole(PAUSER_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have pauser role to pause");
+    require(hasRole(PAUSER_ROLE, _msgSender()), "ThriveCoinERC721Token: must have pauser role to pause");
     _pause();
   }
 
@@ -134,7 +134,7 @@ contract ThriveCoinERC721Token is AccessControlEnumerable, ERC721Enumerable, ERC
    * - the caller must have the `PAUSER_ROLE`.
    */
   function unpause() public virtual {
-    require(hasRole(PAUSER_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have pauser role to unpause");
+    require(hasRole(PAUSER_ROLE, _msgSender()), "ThriveCoinERC721Token: must have pauser role to unpause");
     _unpause();
   }
 
