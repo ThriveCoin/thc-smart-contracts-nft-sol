@@ -17,4 +17,13 @@ module.exports = async function (deployer, network, accounts) {
   if (network === 'test') {
     await deployer.deploy(ERC721HolderTest)
   }
+
+  if (['goerli', 'mumbai'].includes(network)) {
+    const owner = accounts[0]
+    const config = {
+      name_: 'ThriveNFTStaging',
+      symbol_: 'THRIVENFTSTAGING'
+    }
+    await deployer.deploy(ThriveCoinERC721Token, ...Object.values(config), { from: owner })
+  }
 }
