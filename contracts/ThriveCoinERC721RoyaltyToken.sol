@@ -7,11 +7,11 @@ import "./ThriveCoinERC721Token.sol";
 
 /**
  * @author vigan.abd
- * @title ThriveCoin ERC721 L1/L2 Avatar Token
+ * @title ThriveCoin ERC721 L1/L2 Royalty Token
  *
- * @dev Implementation of the THRIVE ERC721 Avatar Token.
- * THRIVEAVATAR is a simple ERC721 with royalty capabilities. Each token
- * represents an avatar that can also be transfered to some other user.
+ * @dev Implementation of the THRIVE ERC721 Royalty Token.
+ * THRIVEROYALTY is a simple ERC721 with royalty capabilities. Each token
+ * represents an nft that can also be transfered to some other user.
  *
  * Key features:
  * - mint
@@ -25,7 +25,7 @@ import "./ThriveCoinERC721Token.sol";
  * NOTE: extends openzeppelin v4.6.0 contracts:
  * https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.6.0/contracts/token/ERC721/extensions/ERC721Royalty.sol
  */
-contract ThriveCoinERC721AvatarToken is ThriveCoinERC721Token, ERC721Royalty {
+contract ThriveCoinERC721RoyaltyToken is ThriveCoinERC721Token, ERC721Royalty {
   /**
    * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE` and `PAUSER_ROLE` to the
    * account that deploys the contract and sets default royalty receiver and
@@ -111,7 +111,7 @@ contract ThriveCoinERC721AvatarToken is ThriveCoinERC721Token, ERC721Royalty {
    * @param feeNumerator - Basis points percentage for default royalty receiver
    */
   function setDefaultRoyalty(address receiver, uint96 feeNumerator) public {
-    require(hasRole(DEFAULT_ADMIN_ROLE, _msgSender()), "ThriveCoinERC721AvatarToken: must have admin role");
+    require(hasRole(DEFAULT_ADMIN_ROLE, _msgSender()), "ThriveCoinERC721RoyaltyToken: must have admin role");
     _setDefaultRoyalty(receiver, feeNumerator);
   }
 

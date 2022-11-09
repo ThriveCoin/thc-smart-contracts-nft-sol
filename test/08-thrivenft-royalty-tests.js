@@ -4,16 +4,16 @@
 
 const assert = require('assert')
 const { keccak256 } = require('@ethersproject/keccak256')
-const ThriveCoinERC721AvatarToken = artifacts.require('ThriveCoinERC721AvatarToken')
+const ThriveCoinERC721RoyaltyToken = artifacts.require('ThriveCoinERC721RoyaltyToken')
 
-describe('ThriveCoinERC721AvatarToken', () => {
+describe('ThriveCoinERC721RoyaltyToken', () => {
   contract('royalty tests', (accounts) => {
     let erc721 = null
     const ADMIN_ROLE = '0x0000000000000000000000000000000000000000000000000000000000000000'
     const MINTER_ROLE = keccak256(Buffer.from('MINTER_ROLE', 'utf8'))
 
     before(async () => {
-      erc721 = await ThriveCoinERC721AvatarToken.deployed()
+      erc721 = await ThriveCoinERC721RoyaltyToken.deployed()
 
       await erc721.grantRole(MINTER_ROLE, accounts[1], { from: accounts[0] })
       await erc721.grantRole(ADMIN_ROLE, accounts[2], { from: accounts[0] })
@@ -97,7 +97,7 @@ describe('ThriveCoinERC721AvatarToken', () => {
         throw new Error('Should not reach here')
       } catch (err) {
         assert.strictEqual(
-          err.message.includes('ThriveCoinERC721AvatarToken: must have admin role'),
+          err.message.includes('ThriveCoinERC721RoyaltyToken: must have admin role'),
           true
         )
       }
