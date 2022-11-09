@@ -1,4 +1,4 @@
-# ThriveCoinERC721Token - ThriveCoin L1 ThriveCoin ERC721 L1/L2 Token (ThriveCoinERC721Token.sol)
+# ThriveCoinERC721Token - ThriveCoin ERC721 L1/L2 Token (ThriveCoinERC721Token.sol)
 
 **View Source:** [contracts/ThriveCoinERC721Token.sol](../contracts/ThriveCoinERC721Token.sol)
 
@@ -155,14 +155,7 @@ function unpause() public virtual
 - `void` 
 
 ### supportsInterface
-
-Unpauses all token transfers.
-
-See {ERC721Pausable} and {Pausable-_unpause}.
-
-Requirements:
-- the caller must have the `PAUSER_ROLE`.
-
+See {IERC165-supportsInterface}.
 ```solidity
 function supportsInterface(bytes4 interfaceId) public view virtual override(AccessControlEnumerable, ERC721, ERC721Enumerable) returns (bool)
 ```

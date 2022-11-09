@@ -6,7 +6,7 @@ import "./ThriveCoinERC721Token.sol";
 
 /**
  * @author vigan.abd
- * @title ThriveCoin ERC721 Burnable Token
+ * @title ThriveCoin ERC721 L1/L2 Burnable Token
  *
  * @dev Implementation of the THRIVE ERC721 Burnable Token.
  * THRIVEBURNABLE is a simple ERC721 token that has burning mechanism as
@@ -35,8 +35,9 @@ contract ThriveCoinERC721BurnableToken is ThriveCoinERC721Token {
    * @dev Burns `tokenId`. See {ERC721-_burn}.
    *
    * Requirements:
-   *
    * - The caller must own `tokenId` or be an approved operator.
+   *
+   * @param tokenId - Token identifier
    */
   function burn(uint256 tokenId) public virtual {
     require(
