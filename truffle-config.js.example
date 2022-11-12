@@ -41,6 +41,15 @@ module.exports = {
     mumbai: {
       provider: () => new HDWalletProvider({
         privateKeys: [privkey],
+        providerOrUrl: `https://rpc-mumbai.maticvigil.com/v1/<key>`
+      }),
+      network_id: 80001,
+      networkCheckTimeout: 1000000,
+      timeoutBlocks: 200
+    },
+    polygon: {
+      provider: () => new HDWalletProvider({
+        privateKeys: [privkey],
         providerOrUrl: 'https://matic-mainnet.chainstacklabs.com'
       }),
       network_id: 80001,
